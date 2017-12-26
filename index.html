@@ -1,81 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <title>Hello, world!</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <title>Hello, world!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    <!-- animocon CSS -->
-    <link rel="stylesheet" type="text/css" href="animocons.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <style>
-      .cover {
-        background: url(img/headerbg.jpg);
-        background-size: cover;
-      }
-      .question {
-        position: absolute;
-        top: 30px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-      </style>
+  <!-- animocon CSS -->
+  <link rel="stylesheet" type="text/css" href="animocons.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 
-  </head>
-  <body>
-    <header>
-      <div class="cover text-white text-center font-weight-bold py-5">
-        <h1 class="display-4 mb-4">Choitto!</h1>
-      </div>
-    </header>
-    <main>
-      <section class="py5" style="color:#2E2E2E;">
-        <h2 class="text-center mb-5 mt-4 text-info">Questions</h2>
-        <!--Question1-->
-          <div class="mb-5 text-center">
-            <div style="position:relative" class="mb-5">
-            <img src="img/q1.jpeg" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
-            <div class="question" >
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+  .cover {
+    background: url(img/headerbg.jpg);
+    background-size: cover;
+  }
+  .question {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <div class="cover text-white text-center font-weight-bold py-5">
+      <h1 class="display-4 mb-4">Choitto!</h1>
+    </div>
+  </header>
+  <main>
+    <section class="py5" style="color:#2E2E2E;">
+      <h2 class="text-center mb-5 mt-4 text-info">Questions</h2>
+      <!--Question1-->
+      <div class="mb-5 text-center">
+        <div style="position:relative" class="mb-5">
+          <img src="img/q1.jpeg" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
+          <div id="q1" class="question">
             <h3>Q1</h3>
             <p>相手の性別は？</p>
-            <button class="icobutton icobutton-3-ccc-red once">
+            <button class="icobutton icobutton-3-ccc-red">
               <span class="fa fa-female"></span>
             </button>
-            <button class="icobutton icobutton-3-ccc-blue once">
+            <button class="icobutton icobutton-3-ccc-blue">
               <span class="fa fa-male"></span>
             </button>
-            </div>
-            </div>
+          </div>
+        </div>
         <!--Question2-->
-            <div style="position:relative" class="mb-5">
-            <img src="img/q2.png" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
-            <div class="question" >
+        <div style="position:relative" class="mb-5">
+          <img src="img/q2.png" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
+          <div id="q2" class="question">
             <h3>Q2</h3>
             <p>相手との関係は？</p>
-            <button class="icobutton icobutton-3-ccc-yellow once d-inline">
+            <button class="icobutton icobutton-3-ccc-yellow d-inline">
               <span class="fa fa-star"></span>
             </button>
             <p class="d-inline mb-5">友達</p>
-            <button class="icobutton icobutton-3-ccc-red once d-inline">
+            <button class="icobutton icobutton-3-ccc-red d-inline">
               <span class="fa fa-heart"></span>
             </button>
             <p class="d-inline">恋人</p>
-            <button class="icobutton icobutton-3-ccc-green once d-inline">
+            <button class="icobutton icobutton-3-ccc-green d-inline">
               <span class="fa fa-user"></span>
             </button>
             <p class="d-inline">家族</p>
           </div>
         </div>
         <!--Question3-->
-            <div style="position:relative" class="mb-5">
-            <img src="img/q3.jpg" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
-            <div class="question" >
+        <div style="position:relative" class="mb-5">
+          <img src="img/q3.jpg" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
+          <div id="q3" class="question">
             <h3>Q3</h3>
             <p>相手の年齢は？</p>
             <div class="form-group" style="width:100px; margin:auto;">
@@ -88,39 +91,42 @@
               </select>
             </div>
           </div>
-          </div>
-          <!--Question4-->
-              <div style="position:relative" class="mb-5">
-              <img src="img/q4.gif" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
-              <div class="question" >
-              <h3>Q4</h3>
-              <p>予算は？</p>
-              <div class="form-group" style="width:100px; margin:auto;">
-                <select class="form-control" id="ages">
-                  <option>~1000円</option>
-                  <option>~3000円</option>
-                  <option>~5000円</option>
-                  <option>~10000円</option>
-                  <option>~20000円</option>
-                  <option>20000円~</option>
-                </select>
-              </div>
-            </div>
-            </div>
         </div>
-      </section>
-      <div class="text-white text-center py-5">
-      <a href="" class="btn btn-primary icobutton-3-ccc-green">結果をみる</a>
+        <!--Question4-->
+        <div style="position:relative" class="mb-5">
+          <img src="img/q4.gif" alt="topimg" style="height:200px; width:200px;" class="rounded-circle">
+          <div id="q4" class="question">
+            <h3>Q4</h3>
+            <p>予算は？</p>
+            <div class="form-group" style="width:100px; margin:auto;">
+              <select class="form-control" id="ages">
+                <option>~1000円</option>
+                <option>~3000円</option>
+                <option>~5000円</option>
+                <option>~10000円</option>
+                <option>~20000円</option>
+                <option>20000円~</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-white text-center py-5">
+      <a id="submit" class="btn btn-primary icobutton-3-ccc-green">結果をみる</a>
     </div>
-    </main>
-    <footer>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!-- animocon のjs -->
-    <script src="animocons.min.js"></script>
-  </body>
+  </main>
+  <footer>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script src="control.js"></script>
+  <!-- animocon のjs -->
+  <script src="animocons.min.js"></script>
+</body>
 </html>
