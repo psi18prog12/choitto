@@ -1,0 +1,85 @@
+/* lopan-syntax.css */
+
+.lopanSyntax {
+  margin: 1.2em 0 1.8em;
+  font-size: .8rem;
+  text-align: left;
+}
+
+.lopanSyntax .label {
+  margin: 0;
+  padding: .3em 1.2em;
+  font-weight: bold;
+}
+
+.lopanSyntax .label + ol {
+  margin-top: 0;
+}
+
+.lopanSyntax + .label {
+  margin-top: -.7em;
+}
+
+.lopanSyntax ol {
+  font-family: "Ubuntu Condensed", sans-serif;
+  list-style-type: decimal-leading-zero;
+  background-color: #593869;
+  padding: 0 0 0 3.8em;
+  border-radius: 3px;
+}
+
+.lopanSyntax li {
+  margin: 0;
+  color: #fff;
+  line-height: 1.4;
+  background-color: #f4f4f4;
+}
+.lopanSyntax li:nth-child(2n+1) {
+  background-color: #fafafa;
+}
+
+.lopanSyntax li code {
+  display: block;
+  margin: 0;
+  padding: .3em .5em;
+  border: 0;
+  border-radius: 0;
+  color: #333;
+  font-family: Consolas, Courier, monospace;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: transparent;
+}
+.lopanSyntax li code:empty::after {
+  content: " ";
+}
+.lopanSyntax .i1 code { padding-left: 1.5em; }
+.lopanSyntax .i2 code { padding-left: 2.5em; }
+.lopanSyntax .i3 code { padding-left: 3.5em; }
+.lopanSyntax .i4 code { padding-left: 4.5em; }
+.lopanSyntax .i5 code { padding-left: 5.5em; }
+.lopanSyntax .i6 code { padding-left: 6.5em; }
+.lopanSyntax .i7 code { padding-left: 7.5em; }
+
+.lopanSyntax li .h {
+  background: linear-gradient(to right bottom, rgba(255,220,0,.5) 20%, transparent 20%, transparent 50%, rgba(255,220,0,.5) 50%, rgba(255,220,0,.5) 70%, transparent 70%);
+  background-size: 4px 4px;
+}
+.lopanSyntax li .comment {
+  color: #86c0cc;
+}
+.lopanSyntax li .delete {
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+.lopanSyntax li .ellipsis {
+  padding: 1em;
+  color: #cdcdcd;
+}
+.lopanSyntax li code em {
+  font-weight: 700;
+  font-style: normal;
+  color: #c03968;
+  background: none;
+}
