@@ -1,0 +1,141 @@
+/* lopan-tabs.css */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+body { margin: 0; }
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.lopanTabs {
+  position: relative;
+}
+.lopanTabs > input[type="radio"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  visibility: hidden;
+}
+
+.lopanTabs .tab-btn {
+  list-style: none;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #686868;
+  text-align: center;
+  background-color: rgba(55,48,57,.8);
+}
+.lopanTabs .tab-btn::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lopanTabs .tab-btn li {
+  float: left;
+}
+.lopanTabs .tab-btn label {
+  display: block;
+  cursor: pointer;
+  height: 44px;
+  padding: 0 1em;
+  border-right: 1px solid #868686;
+  color: #fff;
+  font-size: 1em;
+  line-height: 44px;
+  font-family: 'Ubuntu Condensed';
+  text-align: center;
+}
+.lopanTabs .tab-btn label:hover {
+  background-color: rgba(55,48,57,.2);
+}
+#html:checked ~ .tab-btn label[for="html"],
+#css:checked ~ .tab-btn label[for="css"],
+#js:checked ~ .tab-btn label[for="js"],
+#preview:checked ~ .tab-btn label[for="preview"] { background-color: #593869; }
+
+.lopanTabs .tab-btn .open {
+  float: right;
+  width: auto;
+  height: 44px;
+  padding: 10px;
+}
+.lopanTabs .tab-btn a {
+  display: inline-block;
+  height: 24px;
+  padding: 0 .6em;
+  border-radius: 3px;
+  line-height: 24px;
+  color: #fff;
+  font-size: .8em;
+  font-family: "FOT-ç­‘ç´«Aä¸¸ã‚´ã‚·ãƒƒã‚¯ Std M", "TsukuARdGothicStd-M";
+  vertical-align: top;
+  text-decoration: inherit;
+  transition: background-color .3s;
+}
+.lopanTabs .tab-btn a:hover {
+  background-color: rgba(255,255,255,.2);
+}
+
+.lopanTabs .tab-container {
+  position: absolute;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+.lopanTabs .tab-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 44px;
+}
+#html:checked ~ .tab-container [data-content="html"],
+#css:checked ~ .tab-container [data-content="css"],
+#js:checked ~ .tab-container [data-content="js"],
+#preview:checked ~ .tab-container [data-content="preview"] { display: block; }
+
+.lopanTabs .lopanSyntax,
+.lopanTabs .lopanSyntax ol {
+  margin: 0;
+  border-radius: 0;
+}
+.lopanTabs .tab-content {
+  padding: 10px;
+  font-family: "Heiti SC", AppleGothic, sans-serif;
+}
+.lopanTabs .tab-content *,
+.lopanTabs .tab-content ::before,
+.lopanTabs .tab-content ::after {
+  box-sizing: content-box;
+}
+
+/* min-width: 480 - (11 + 11) */
+@media screen and (min-width: 458px) {
+  .lopanTabs .tab-btn li {
+    width: 20%;
+    max-width: 8em;
+  }
+}
+
+/* max-width: 479 - (11 + 11) */
+@media screen and (max-width: 457px) {
+  .lopanTabs .tab-btn a::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 100%;
+    background: url(../img/open.svg) center / 14px no-repeat;
+  }
+  .lopanTabs .tab-btn span {
+    display: none;
+  }
+}
