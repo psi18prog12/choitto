@@ -26,6 +26,66 @@
 
 <script type="text/javascript" src="index.js"></script>
 <style>
+  .bouton_4{
+      width:40px;
+      height:40px;
+      margin-top: 5px;
+      border-radius:40px;
+      background-color:#CB2025;
+      overflow:hidden;
+      -webkit-transition:all 0.2s ease-in;
+      -moz-transition:all 0.2s ease-in;
+      -ms-transition:all 0.2s ease-in;
+      -o-transition:all 0.2s ease-in;
+      transition:all 0.2s ease-in;
+  }
+  .bouton_4:hover{
+      width:200px;
+      height:40px;
+      border-radius:40px;
+      background-color:#97bf0d;
+  }
+  .texteduboutton_4
+  {
+      width:70%;
+      padding-right: 10px;
+      float:right;
+      line-height:40px;
+      color:#ffffff;
+      font-family:'Roboto';
+      font-weight:300;
+      font-size:18px;
+  }
+  .bouton_5{
+      width:40px;
+      height:40px;
+      margin-top: 5px;
+      border-radius:40px;
+      background-color:#FF8C00;
+      overflow:hidden;
+      -webkit-transition:all 0.2s ease-in;
+      -moz-transition:all 0.2s ease-in;
+      -ms-transition:all 0.2s ease-in;
+      -o-transition:all 0.2s ease-in;
+      transition:all 0.2s ease-in;
+  }
+  .bouton_5:hover{
+      width:200px;
+      height:40px;
+      border-radius:40px;
+      background-color:#0000FF;
+  }
+  .texteduboutton_5
+  {
+      width:70%;
+      padding-right: 10px;
+      float:right;
+      line-height:40px;
+      color:#ffffff;
+      font-family:'Roboto';
+      font-weight:300;
+      font-size:18px;
+  }
   .cover {
     background: url(img/headerbg.jpg);
     background-size: cover;
@@ -38,14 +98,38 @@
     right: 0;
     margin: auto;
   }
+
+  .bg{
+  	background: url(img/headerbg.jpg) no-repeat center;
+  	background-size: cover;
+  	position: relative;
+  	height:100%;
+  }
+  .bg::before{
+  	/* 透過した黒を重ねる */
+  	background-color: rgba(0,0,0,0.5);
+  	/* どの範囲に重ねるかを指定 */
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	content: ' ';
+  }
+  .box{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+
   </style>
 
 </head>
 <body>
   <div class="lopanTabs">
-    <input type="radio" name="tab" id="html">
+    <input type="radio" name="tab" id="html" checked>
     <input type="radio" name="tab" id="css">
-    <input type="radio" name="tab" id="preview" checked>
+    <input type="radio" name="tab" id="preview">
     <ul class="tab-btn">
       <li><label for="html">TOP</label></li>
       <li><label for="css">ABOUT</label></li>
@@ -54,10 +138,26 @@
     </ul>
     <div class="tab-container">
       <div class="tab-panel" data-content="html">
-        <div class="lopanSyntax">
+        <header style="height:700px; margin:0;">
+        <div class="bg">
+          <div class="box text-white" style="padding-top:300px;">
+            <h1 >Choitto!</h1>
+            <p >〜気軽にギフトをチョイスする〜</p>
+            <div class="bouton_4 mt-3" style="margin:auto;" onclick="goAbout()">
+              <img src="img/logo.png" style="width:30px;
+                     height:30px;margin-top:4px;"/>
+              <span class="texteduboutton_4">choitto!とは？</span>
+            </div>
+            <div class="bouton_5 mt-3" style="margin:auto;" onclick="goSearch()">
+              <i class="fa fa-search" style="font-size: 1.8em; margin-top:4px;" aria-hidden="true"></i>
+              <span class="texteduboutton_5">早速調べる!</span>
+            </div>
 
+          </div>
         </div>
-      </div>
+      </header>
+        </div>
+
       <div class="tab-panel" data-content="css">
         <div class="lopanSyntax">
 

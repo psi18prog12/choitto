@@ -1,3 +1,17 @@
+function goAbout(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "css" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
+function goSearch(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "preview" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
 function slide1(){
   var tab1 = document.getElementById( "tab-1" ) ;
   var tab2 = document.getElementById( "tab-2" ) ;
