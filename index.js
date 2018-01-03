@@ -1,3 +1,25 @@
+function goAbout(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "css" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
+function goSearch(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "preview" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
+function slide0(){
+  var tab1 = document.getElementById( "tab-1" ) ;
+  var tab5 = document.getElementById( "tab-5" ) ;
+  tab5.checked = false ;
+  tab1.checked = true ;
+  document.getElementById("resultbutton").click();
+}
+
 function slide1(){
   var tab1 = document.getElementById( "tab-1" ) ;
   var tab2 = document.getElementById( "tab-2" ) ;
