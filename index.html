@@ -86,10 +86,7 @@
       font-weight:300;
       font-size:18px;
   }
-  .cover {
-    background: url(img/headerbg.jpg);
-    background-size: cover;
-  }
+
   .question {
     position: absolute;
     top: 30px;
@@ -160,13 +157,58 @@
 
       <div class="tab-panel" data-content="css">
         <div class="lopanSyntax">
+          <header>
+            <div style="height:200px; margin:0;">
+            <div class="bg">
+              <div class="box text-white" style="padding-top:75px;">
+                <h1 >Choitto!</h1>
+                <p>〜気軽にギフトをチョイスする〜</p>
+            </div>
+          </div>
+          </header>
+          <main>
+            <section class="py-5">
+              <h2 class="text-center mb-5">Choitto!とは</h2>
+              <div class="container">
+                <div class="mb-5 row">
+                <div class="col-sm-8">
+                  <h3>毎月のプレゼント選び</h3>
+                  <p>バレンタイン、ホワイトデー、母の日、父の日…これに加えて友達、家族の誕生日に恋人の記念日…</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="img/calender.jpeg" class="2-100 rounded-circle" alt="">
+                </div>
+                </div>
+                <div class=" row mb-3">
+                <div class="col-sm-8 order-sm-2">
+                  <h3>選ぶのは正直大変...</h3>
+                  <p>何が好きなんだろう、あれっていくらくらいだっけ、気に入ってもらえるかな、というかもう面倒臭い！</p>
+                </div>
+                <div class="col-sm-4 order-sm-1">
+                  <img src="img/human.jpeg" class="2-100 rounded-circle" alt="">
+                </div>
+                </div>
+              </div>
+              <div class="text-center bg-warning" style="height:500px;">
+                <h2 class="text-center mb-1 pt-5">〜あなたの代わりにぴったりのギフトを探します〜</h2>
+                <img src="img/Choitto!-logo.png" alt="">
+                <div class="bouton_5 mt-3 pb-3" style="margin:auto;" onclick="goSearch()">
+                  <i class="fa fa-search" style="font-size: 1.8em; margin-top:4px;" aria-hidden="true"></i>
+                  <span class="texteduboutton_5">早速調べる!</span>
+                </div>
+              </div>
 
+            </section>
+          </main>
         </div>
       </div>
       <div class="tab-panel" data-content="preview">
         <header>
-          <div class="cover text-white text-center font-weight-bold py-5">
-            <h1 class="display-4 mb-4">Choitto!</h1>
+          <div style="height:200px; margin:0;">
+          <div class="bg">
+            <div class="box text-white" style="padding-top:75px;">
+              <h1 >Choitto!</h1>
+              <p>〜気軽にギフトをチョイスする〜</p>
           </div>
         </header>
         <main>
@@ -289,7 +331,7 @@
               </section>
               <section>
                 <p>
-                <a class="btn btn-secondary" data-toggle="collapse" href="#result" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-secondary" data-toggle="collapse" id="resultbutton" href="#result" role="button" aria-expanded="false" aria-controls="collapseExample">
                   結果を見る
                 </a>
               </p>
@@ -304,7 +346,7 @@
                     </div>
                 </div>
                 <div class="text-white text-center">
-                <a href="index.html" class="mt-2 btn btn-info icobutton-3-ccc-green">やり直す</a>
+                <div class="mt-2 btn btn-info icobutton-3-ccc-green" onclick="slide0()">やり直す</div>
               </div>
               </div>
               </section>
