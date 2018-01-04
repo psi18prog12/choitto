@@ -4,9 +4,6 @@
   font-family: "Ubuntu Condensed";
   font-style: normal;
   font-weight: 400;
-  src: local("Ubuntu Condensed"),
-       local("UbuntuCondensed-Regular"),
-       url(UbuntuCondensed-Regular.woff) format("woff");
 }
 
 html.full,
@@ -17,7 +14,6 @@ html.full #wrapper {
 }
 
 body {
-  background: url(../img/bg.png);
   font-family: "Heiti SC", AppleGothic, sans-serif;
 }
 
@@ -2732,7 +2728,6 @@ footer .copyright {
 .para.back header,
 .para.back footer {
   z-index: 1;
-  background: url(../img/bg.png) fixed;
 }
 
 .para #contents-2 {
@@ -2745,10 +2740,6 @@ footer .copyright {
 
 .para #contents-4 p {
   color: #fff;
-}
-
-.para #contents-5 {
-  background: url(../img/bg.png) fixed;
 }
 
 .para.back #contents::before,

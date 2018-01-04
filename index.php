@@ -24,6 +24,14 @@
 <link rel="stylesheet" type="text/css" href="animocons.min.css" />
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!-- animocon のjs -->
+<script src="animocons.min.js"></script>
+
 <script type="text/javascript" src="index.js"></script>
 <style>
   .cover {
@@ -90,7 +98,7 @@
               <section>
               <div style="position:relative" class="mb-5">
               <img src="img/q1.jpeg" alt="topimg" style="height:400px; width:400px;" class="rounded-circle">
-              <div class="question" style="margin-top:80px;">
+              <div id="q1" class="question" style="margin-top:80px;">
               <h3>Q1</h3>
               <p>相手の性別は？</p>
               <button class="icobutton icobutton-3-ccc-red fa-5x">
@@ -106,7 +114,7 @@
               <section>
                 <div style="position:relative" class="mb-5">
                 <img src="img/q2.png" alt="topimg" style="height:400px; width:400px;" class="rounded-circle">
-                <div class="question" style="margin-top:50px;">
+                <div id="q2" class="question" style="margin-top:50px;">
                 <h3>Q2</h3>
                 <p>相手との関係は？</p>
                 <button class="icobutton icobutton-3-ccc-yellow d-inline fa-2x">
@@ -130,28 +138,28 @@
               <section>
                 <div style="position:relative" class="mb-5">
                 <img src="img/q3.jpg" alt="topimg" style="height:400px; width:400px;" class="rounded-circle">
-                <div class="question" style="margin-top:50px;" >
+                <div id="q3" class="question" style="margin-top:50px;" >
                 <h3>Q3</h3>
                 <p>相手の年齢は？</p>
                 <div class="form-group" style="width:100px; margin:auto;">
-                  <select class="form-control" id="ages">
-                    <option>ちびっこ</option>
-                    <option>10代</option>
-                    <option>20代</option>
-                    <option>30代</option>
-                    <option>40代</option>
-                    <option>50代</option>
-                    <option>60代</option>
+                  <select class="form-control" id="age_min">
+                    <option value="">ちびっこ</option>
+                    <option value="10">10代</option>
+                    <option value="20">20代</option>
+                    <option value="30">30代</option>
+                    <option value="40">40代</option>
+                    <option value="50">50代</option>
+                    <option value="60">60代</option>
                   </select>
                   <p class="d-inline">〜</p>
-                  <select class="form-control" id="ages">
-                    <option>ちびっこ</option>
-                    <option>10代</option>
-                    <option>20代</option>
-                    <option>30代</option>
-                    <option>40代</option>
-                    <option>50代</option>
-                    <option>60代</option>
+                  <select class="form-control" id="age_max">
+                    <option value="">ちびっこ</option>
+                    <option value="10">10代</option>
+                    <option value="20">20代</option>
+                    <option value="30">30代</option>
+                    <option value="40">40代</option>
+                    <option value="50">50代</option>
+                    <option value="60">60代</option>
                   </select>
                 </div>
               </div>
@@ -161,26 +169,26 @@
               <section>
                 <div style="position:relative" class="mb-5">
                 <img src="img/q4.gif" alt="topimg" style="height:400px; width:400px;" class="rounded-circle">
-                <div class="question" style="margin-top:50px;">
+                <div id="q4" class="question" style="margin-top:50px;">
                 <h3>Q4</h3>
                 <p>予算は？</p>
                 <div class="form-group" style="width:100px; margin:auto;">
-                  <select class="form-control" id="money">
-                    <option>~1000円</option>
-                    <option>~3000円</option>
-                    <option>~5000円</option>
-                    <option>~10000円</option>
-                    <option>~20000円</option>
-                    <option>20000円~</option>
+                  <select class="form-control" id="budget_min">
+                    <option value="">下限なし</option>
+                    <option value="1000">1,000円</option>
+                    <option value="3000">3,000円</option>
+                    <option value="5000">5,000円</option>
+                    <option value="10000">10,000円</option>
+                    <option value="20000">20,000円</option>
                   </select>
                   <p class="d-inline">〜</p>
-                  <select class="form-control" id="money">
-                    <option>~1000円</option>
-                    <option>~3000円</option>
-                    <option>~5000円</option>
-                    <option>~10000円</option>
-                    <option>~20000円</option>
-                    <option>20000円~</option>
+                  <select class="form-control" id="budget_max">
+                    <option value="1000">1,000円</option>
+                    <option value="3000">3,000円</option>
+                    <option value="5000">5,000円</option>
+                    <option value="10000">10,000円</option>
+                    <option value="20000">20,000円</option>
+                    <option value="">上限なし</option>
                   </select>
                 </div>
               </div>
@@ -189,24 +197,11 @@
               </section>
               <section>
                 <p>
-                <a class="btn btn-secondary" data-toggle="collapse" href="#result" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a id="submit" class="btn btn-secondary" href="#result">
                   結果を見る
                 </a>
               </p>
-              <div class="collapse" id="result">
-                <h1 class="pt-5 pl-5">オススメのプレゼントは…</h1>
-                <div class="card border border-primary" style="width: 20rem; margin:auto;">
-                    <img class="card-img-top" src="img/result.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Allegrettoの手袋</h4>
-                      <p class="card-text">保温性が高く、非常にしなやかで軽く薄く柔らかい、羊革の中で最高級のラムスキンを使用した女性用の手袋。女性らしい柔らかさと温かさを演出します。</p>
-                      <a href="https://item.rakuten.co.jp/allegretto/atku078_b/" class="btn btn-outline-warning">早速買う！</a>
-                    </div>
-                </div>
-                <div class="text-white text-center">
-                <a href="index.html" class="mt-2 btn btn-info icobutton-3-ccc-green">やり直す</a>
-              </div>
-              </div>
+              <div id="result" style="display: none;"></div>
               </section>
             </div>
           </div>
@@ -217,12 +212,5 @@
       </div>
     </div>
   </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- animocon のjs -->
-  <script src="animocons.min.js"></script>
 </body>
 </html>

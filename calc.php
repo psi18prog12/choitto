@@ -5,18 +5,31 @@ function _getData($where)
 	try {
         $gender = $where['gender'];
         $rel = $where['rel'];
+
+        // genderとrelだけSQLクエリで絞る
+        $pdo = new PDO("mysql:host=localhost;dbname=psi18prog12;charset=utf8mb4",'root','',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        $stmt = $pdo->prepare('SELECT * FROM items WHERE (gender = ? OR gender = 2) AND (rel & ?)');
+
+        $stmt->bindValue(1, (int)$gender, PDO::PARAM_INT);
+        $stmt->bindValue(2, 2**(int)$rel, PDO::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
         $age = $where['age'];
         $budget = $where['budget'];
 
-		$pdo = new PDO("mysql:host=localhost;dbname=prog;charset=utf-8",'root','',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-        $stmt = $pdo->prepare('SELECT * FROM items WHERE gender = ? AND rel = ? AND (age BETWEEN ? AND ?) AND (price BETWEEN ? AND ?)');
-        $stmt->bindValue(1, $gender);
-        $stmt->bindValue(2, (int)$rel, PDO::PARAM_INT);
-        $stmt->bindValue(3, (int)$age[0], PDO::PARAM_INT);
-        $stmt->bindValue(4, (int)$age[1], PDO::PARAM_INT);
-        $stmt->bindValue(5, (int)$budget[0], PDO::PARAM_INT);
-        $stmt->bindValue(6, (int)$budget[1], PDO::PARAM_INT);
-        $stmt->execute();
+        $ret = [];
+
+        // ageとpriceはPHPで絞る
+        foreach ($data as $v) {
+            if ($age['max'] != 0 && $age['max'] < $v['min_age']) continue;
+            if ($v['max_age'] != 0 && $age['min'] > $v['max_age']) continue;
+            if ($budget['min'] >= $v['price'] || $budget['max'] <= $v['price']) continue;
+            $ret[] = $v;
+        }
+
+        return $ret;
 	}
 	catch (PDOException $e) {
         exit($e->getMessage());
@@ -26,34 +39,40 @@ function _getData($where)
 header('Content-Type: application/json');
 
 try {
-    if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
-       && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
-    {
-        // Ajaxリクエストの場合のみ処理する
-        if (
-            isset($_POST['gender'])
-            && isset($_POST['rel'])
-            && isset($_POST['age'])
-            && isset($_POST['budget'])
-        ){
-            var_dump($_POST);die; // 今はデータ形式が異なるのでここで終了している
-            $where = [
-                'gender' => $_POST['gender'],
-                'rel' => $_POST['rel'],
-                'age' => json_decode($_POST['age'], true), // これから配列になると予想
-                'budget' => json_decode($_POST['budget'], true) // これから配列になると予想
+    if (
+        isset($_POST['gender'])
+        && isset($_POST['rel'])
+        && isset($_POST['age'])
+        && isset($_POST['budget'])
+    ){
+        // 検索条件
+        $where = [
+            'gender' => $_POST['gender'],
+            'rel' => $_POST['rel'],
+            'age' => $_POST['age'],
+            'budget' => $_POST['budget']
+        ];
+
+        // 結果群を取得
+        $data = array_map(function($v){
+            return [
+                'name' => $v['name'],
+                'url' => $v['url'],
+                'img' => $v['img']
             ];
-            $data = _getData($where);
-            echo json_encode([
-                'state' => 'OK',
-                'data' => $data
-            ]);
-            exit;
-        } else {
-            throw new Exception('Invalid Parameters');
-        }
+        },_getData($where));
+
+        // ランダムに一個チョイス
+        $data = $data[rand(0,count($data)-1)];
+
+        // 返却
+        echo json_encode([
+            'state' => 'OK',
+            'data' => $data
+        ]);
+        exit;
     } else {
-        throw new Exception('Invalid Access');
+        throw new Exception('Invalid Parameters');
     }
 }
 catch (Exception $e) {
