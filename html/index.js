@@ -46,6 +46,8 @@ function slide4(){
   var tab5 = document.getElementById( "tab-5" ) ;
   tab4.checked = false ;
   tab5.checked = true ;
+
+  $('#result').empty();
 }
 
 $(function(){
@@ -83,6 +85,7 @@ $(function(){
           var name = ret.data.name;
           var url = ret.data.url;
           var img = ret.data.img;
+          $('#result').empty();
           $('#result').append('<h1 class="pt-5 pl-5">オススメのプレゼントは…</h1>\
                 <div class="card border border-primary" style="width: 20rem; margin:auto;">\
                     <img class="card-img-top" src="'+img+'" alt="Card image cap">\
