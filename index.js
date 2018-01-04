@@ -1,3 +1,25 @@
+function goAbout(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "css" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
+function goSearch(){
+    var bar1 = document.getElementById( "html" ) ;
+    var bar2 = document.getElementById( "preview" ) ;
+    bar1.checked = false ;
+    bar2.checked = true ;
+}
+
+function slide0(){
+  var tab1 = document.getElementById( "tab-1" ) ;
+  var tab5 = document.getElementById( "tab-5" ) ;
+  tab5.checked = false ;
+  tab1.checked = true ;
+  document.getElementById("resultbutton").click();
+}
+
 function slide1(){
   var tab1 = document.getElementById( "tab-1" ) ;
   var tab2 = document.getElementById( "tab-2" ) ;
@@ -33,7 +55,7 @@ $(function(){
   $('#q2 span').on('click', function(){
     $(this).toggleClass('active');
   });
-  $('#submit').on('click', function(){
+  $('#resultbutton').on('click', function(){
     var gender = $('#q1 span.active').hasClass('fa-male') ? 0 : 1;
     var rel = $('#q2 span.active').hasClass('fa-star') ? 0 : $('#q2 span').hasClass('fa-heart') ? 1 :2;
     var age_min = $('#age_min').val();
@@ -70,7 +92,7 @@ $(function(){
                     </div>\
                 </div>\
                 <div class="text-white text-center">\
-                <a href="/" class="mt-2 btn btn-info icobutton-3-ccc-green">やり直す</a>\
+                <div class="mt-2 btn btn-info icobutton-3-ccc-green" onclick="slide0()">やり直す</div>\
               </div>').show('slow');
         }).fail(function(ret){
           console.log(ret);

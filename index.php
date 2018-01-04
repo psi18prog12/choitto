@@ -34,10 +34,67 @@
 
 <script type="text/javascript" src="index.js"></script>
 <style>
-  .cover {
-    background: url(img/headerbg.jpg);
-    background-size: cover;
+  .bouton_4{
+      width:40px;
+      height:40px;
+      margin-top: 5px;
+      border-radius:40px;
+      background-color:#CB2025;
+      overflow:hidden;
+      -webkit-transition:all 0.2s ease-in;
+      -moz-transition:all 0.2s ease-in;
+      -ms-transition:all 0.2s ease-in;
+      -o-transition:all 0.2s ease-in;
+      transition:all 0.2s ease-in;
   }
+  .bouton_4:hover{
+      width:200px;
+      height:40px;
+      border-radius:40px;
+      background-color:#97bf0d;
+  }
+  .texteduboutton_4
+  {
+      width:70%;
+      padding-right: 10px;
+      float:right;
+      line-height:40px;
+      color:#ffffff;
+      font-family:'Roboto';
+      font-weight:300;
+      font-size:18px;
+  }
+  .bouton_5{
+      width:40px;
+      height:40px;
+      margin-top: 5px;
+      border-radius:40px;
+      background-color:#FF8C00;
+      overflow:hidden;
+      -webkit-transition:all 0.2s ease-in;
+      -moz-transition:all 0.2s ease-in;
+      -ms-transition:all 0.2s ease-in;
+      -o-transition:all 0.2s ease-in;
+      transition:all 0.2s ease-in;
+  }
+  .bouton_5:hover{
+      width:200px;
+      height:40px;
+      border-radius:40px;
+      background-color:#0000FF;
+  }
+  .texteduboutton_5
+  {
+      width:70%;
+      padding-right: 10px;
+      float:right;
+      line-height:40px;
+      color:#ffffff;
+      font-family:'Roboto';
+      font-weight:300;
+      font-size:18px;
+  }
+
   .question {
     position: absolute;
     top: 30px;
@@ -46,14 +103,38 @@
     right: 0;
     margin: auto;
   }
+
+  .bg{
+  	background: url(img/headerbg.jpg) no-repeat center;
+  	background-size: cover;
+  	position: relative;
+  	height:100%;
+  }
+  .bg::before{
+  	/* 透過した黒を重ねる */
+  	background-color: rgba(0,0,0,0.5);
+  	/* どの範囲に重ねるかを指定 */
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	content: ' ';
+  }
+  .box{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+
   </style>
 
 </head>
 <body>
   <div class="lopanTabs">
-    <input type="radio" name="tab" id="html">
+    <input type="radio" name="tab" id="html" checked>
     <input type="radio" name="tab" id="css">
-    <input type="radio" name="tab" id="preview" checked>
+    <input type="radio" name="tab" id="preview">
     <ul class="tab-btn">
       <li><label for="html">TOP</label></li>
       <li><label for="css">ABOUT</label></li>
@@ -62,19 +143,80 @@
     </ul>
     <div class="tab-container">
       <div class="tab-panel" data-content="html">
-        <div class="lopanSyntax">
+        <header style="height:700px; margin:0;">
+        <div class="bg">
+          <div class="box text-white" style="padding-top:300px;">
+            <h1 >Choitto!</h1>
+            <p >〜気軽にギフトをチョイスする〜</p>
+            <div class="bouton_4 mt-3" style="margin:auto;" onclick="goAbout()">
+              <img src="img/logo.png" style="width:30px;
+                     height:30px;margin-top:4px;"/>
+              <span class="texteduboutton_4">choitto!とは？</span>
+            </div>
+            <div class="bouton_5 mt-3" style="margin:auto;" onclick="goSearch()">
+              <i class="fa fa-search" style="font-size: 1.8em; margin-top:4px;" aria-hidden="true"></i>
+              <span class="texteduboutton_5">早速調べる!</span>
+            </div>
 
+          </div>
         </div>
-      </div>
+      </header>
+        </div>
+
       <div class="tab-panel" data-content="css">
         <div class="lopanSyntax">
+          <header>
+            <div style="height:200px; margin:0;">
+            <div class="bg">
+              <div class="box text-white" style="padding-top:75px;">
+                <h1 >Choitto!</h1>
+                <p>〜気軽にギフトをチョイスする〜</p>
+            </div>
+          </div>
+          </header>
+          <main>
+            <section class="py-5">
+              <h2 class="text-center mb-5">Choitto!とは</h2>
+              <div class="container">
+                <div class="mb-5 row">
+                <div class="col-sm-8">
+                  <h3>毎月のプレゼント選び</h3>
+                  <p>バレンタイン、ホワイトデー、母の日、父の日…これに加えて友達、家族の誕生日に恋人の記念日…</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="img/calender.jpeg" class="2-100 rounded-circle" alt="">
+                </div>
+                </div>
+                <div class=" row mb-3">
+                <div class="col-sm-8 order-sm-2">
+                  <h3>選ぶのは正直大変...</h3>
+                  <p>何が好きなんだろう、あれっていくらくらいだっけ、気に入ってもらえるかな、というかもう面倒臭い！</p>
+                </div>
+                <div class="col-sm-4 order-sm-1">
+                  <img src="img/human.jpeg" class="2-100 rounded-circle" alt="">
+                </div>
+                </div>
+              </div>
+              <div class="text-center bg-warning" style="height:500px;">
+                <h2 class="text-center mb-1 pt-5">〜あなたの代わりにぴったりのギフトを探します〜</h2>
+                <img src="img/Choitto!-logo.png" alt="">
+                <div class="bouton_5 mt-3 pb-3" style="margin:auto;" onclick="goSearch()">
+                  <i class="fa fa-search" style="font-size: 1.8em; margin-top:4px;" aria-hidden="true"></i>
+                  <span class="texteduboutton_5">早速調べる!</span>
+                </div>
+              </div>
 
+            </section>
+          </main>
         </div>
       </div>
       <div class="tab-panel" data-content="preview">
         <header>
-          <div class="cover text-white text-center font-weight-bold py-5">
-            <h1 class="display-4 mb-4">Choitto!</h1>
+          <div style="height:200px; margin:0;">
+          <div class="bg">
+            <div class="box text-white" style="padding-top:75px;">
+              <h1 >Choitto!</h1>
+              <p>〜気軽にギフトをチョイスする〜</p>
           </div>
         </header>
         <main>
@@ -197,7 +339,7 @@
               </section>
               <section>
                 <p>
-                <a id="submit" class="btn btn-secondary" href="#result">
+                <a class="btn btn-secondary" id="resultbutton" >
                   結果を見る
                 </a>
               </p>
